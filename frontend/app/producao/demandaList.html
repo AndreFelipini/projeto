@@ -1,0 +1,38 @@
+<div class="col-xs-12">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Peso/Quantidade</th>
+        <th>Status</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="demanda in prodCtrl.producao.demandas">
+        <td>
+          <input ng-model="demanda.produto" class="form-control" placeholder="Informe o Nome"
+            ng-readonly="prodCtrl.tabDelete" />
+        </td>
+        <td>
+          <input ng-model="demanda.quantidade" class="form-control" placeholder="Informe o Peso"
+            ng-change="bcCtrl.calculateValues()" ng-readonly="prodCtrl.tabDelete" type="namber" />
+        </td>
+        <td>
+          <select name="status" style="height: 34px;" ng-model="demanda.status" class="form-control" ng-readonly="prodCtrl.tabDelete">
+            <option value="VENDIDO">VENDIDO</option>
+            <option value="AGENDADO">AGENDADO</option>
+          </select>
+        </td>
+        <td class="table-actions">
+          <button class="btn btn-success" ng-disabled="{prodCtrl.tabDelete}" ng-click="prodCtrl.addDemanda($index)">
+            <i class="fa fa-plus"></i></button>
+          <button class="btn btn-warning" ng-disabled="{prodCtrl.tabDelete}" ng-click="prodCtrl.cloneDemanda($index, demanda)">
+            <i class="fa fa-clone"></i></button>
+          <button class="btn btn-danger" ng-disabled="{prodCtrl.tabDelete}" ng-click="prodCtrl.deleteDemanda($index)">
+            <i class="fa fa-trash-o"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

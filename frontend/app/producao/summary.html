@@ -1,0 +1,9 @@
+
+<div class="row">
+  <value-box grid="12 4" color-class="info-box-icon bg-green" icon-class="fa fa-tree"
+    text="Total de Produção" value="{{ prodCtrl.produzido | number: 3 }} Kg" ></value-box>
+  <value-box grid="12 4" color-class="info-box-icon bg-blue" icon-class="fa fa-line-chart"
+    text="Total Demanda" value=" {{ prodCtrl.demanda | number: 3 }} Kg" ></value-box>
+  <value-box grid="12 4" color-class="info-box-icon bg-yellow" icon-class="fa fa-cubes"
+      text="Produção / Demanda" value="{{ prodCtrl.total | number: 3 }} Kg" ></value-box>
+</div>

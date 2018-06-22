@@ -1,0 +1,31 @@
+<div class="col-xs-12">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Peso/Quantidade</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="prod in prodCtrl.producao.produzidos">
+        <td>
+          <input ng-model="prod.produto" class="form-control" placeholder="Informe o Nome"
+            ng-readonly="prodCtrl.tabDelete" />
+        </td>
+        <td>
+          <input ng-model="prod.quantidades" class="form-control" placeholder="Informe o Peso"
+            ng-change="bcCtrl.calculateValues()" ng-readonly="prodCtrl.tabDelete" type="number" />
+        </td>
+        <td class="table-actions">
+          <button class="btn btn-success" ng-disabled="{prodCtrl.tabDelete}" ng-click="prodCtrl.addProduzido($index)">
+            <i class="fa fa-plus"></i></button>
+          <button class="btn btn-warning" ng-disabled="{prodCtrl.tabDelete}" ng-click="prodCtrl.cloneProduzido($index, produzido)">
+            <i class="fa fa-clone"></i></button>
+          <button class="btn btn-danger" ng-disabled="{prodCtrl.tabDelete}" ng-click="prodCtrl.deleteProduzido($index)">
+            <i class="fa fa-trash-o"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,23 @@
+<div class="box-body">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Tipo Produto</th>
+        <th>Mês</th>
+        <th>Ano</th>
+        <th>Ações</th>
+      <tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="producao in prodCtrl.producao">
+        <td>{{producao.produto}}</td>
+        <td>{{producao.month}}</td>
+        <td>{{producao.year}}</td>
+        <td class="table-actionsS">
+          <button class="btn btn-warning" ng-click="prodCtrl.showTabUpdate(producao)"><i class="fa fa-pencil"></i></button>
+          <button class="btn btn-danger" ng-click="prodCtrl.showTabDelete(producao)"><i class="fa fa-trash-o"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

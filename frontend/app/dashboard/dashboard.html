@@ -1,0 +1,25 @@
+<content-header name="Financeiro"></content-header>
+
+<section class="content" ng-controller="DashboardCtrl as dashboard">
+  <div class="row">
+    <value-box grid="4" color-class="info-box-icon bg-green" icon-class="fa fa-bank"
+      text="Total de Crédito" value="R$ {{ dashboard.credit | number: 2 }}" ></value-box>
+    <value-box grid="4" color-class="info-box-icon bg-red" icon-class="fa fa-credit-card"
+      text="Total de Débito" value="R$ {{ dashboard.debt | number: 2 }}" ></value-box>
+    <value-box grid="4" color-class="info-box-icon bg-blue" icon-class="fa fa-money"
+        text="Valor Consolidado" value="R$ {{ dashboard.total | number: 2 }}" ></value-box>
+  </div>
+</section>
+
+<content-header name="Produção"></content-header>
+
+<section class="content" ng-controller="ProducaoTotal as totalProduzido">
+  <div class="row">
+    <value-box grid="4" color-class="info-box-icon bg-green" icon-class="fa fa-tree"
+      text="Total de Produção" value="{{ totalProduzido.produzido | number: 3 }} Kg" ></value-box>
+    <value-box grid="4" color-class="info-box-icon bg-blue" icon-class="fa fa-line-chart"
+      text="Total Demanda" value=" {{ totalProduzido.demanda | number: 3 }} Kg" ></value-box>
+    <value-box grid="4" color-class="info-box-icon bg-yellow" icon-class="fa fa-cubes"
+        text="Produção / Demanda" value="{{ totalProduzido.total | number: 3 }} Kg" ></value-box>
+  </div>
+</section>
